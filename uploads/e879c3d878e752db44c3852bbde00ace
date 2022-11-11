@@ -1,0 +1,13 @@
+HTML: Hyper Text Markup Language
+HTTP: Hyper Text Trabsfer Protocol
+URI: Universal Resource Identifier
+URL: Universal Resource Locater
+
+
+<!DOCTYOE HTML>
+<html>
+<head>This data won't bw rendered to the user</head>
+<title>This will be displayed on the tab</title>
+</html>
+
+html is used for  data transfer thuss hyper text mark up language
