@@ -9,7 +9,7 @@ const uploadService=require('./upload.service');
 function uploadPostController(req,res){
     const password=req.body.password;
     const path= req.file.path;
-    const originalName= req.file.originalname;
+const originalName= req.file.originalname;
     const fileId=uuidv4();
     const fileLink=uploadService.fileLink(fileId);
     uploadService.updatelink(originalName,path,password,fileId,fileLink);

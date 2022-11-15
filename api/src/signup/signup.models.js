@@ -6,10 +6,4 @@ module.exports=function signupModel(newId,user,email,password){
 }
 
 
-// const {Sequelize}=require('sequelize');
-// const sequelize=new Sequelize('File_Sharing','postgres','admin',{
-//     host:'localhost',
-//     dialect:'postgres',
 
-// });
-//sequelize.authenticate().then(()=>console.log('Sequlize estlablished')).catch(err=>console.log(`Error ${err}`));

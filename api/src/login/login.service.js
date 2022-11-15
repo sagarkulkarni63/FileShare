@@ -1,14 +1,15 @@
 const loginModel = require("./login.model");
-const generateAccessAndRefreshToken = require("../authorization/generateAccessAndRefreshToken");
+const tokenService= require('../authorization/tokenService');
+const generateAccessAndRefreshToken=tokenService.generateAccessAndRefreshToken;
 
 async function login(emailId, password) {
   const user = await getUser(emailId, password);
-  console.log(user);
+  //console.log(user);
   if (!user.rows.length) {
     return { status: "failure", msg: "INVALID USERNAME AND PASSWORD" };
   }
   const object = user.rows[0];
-  console.log(object);
+  //console.log(object);
   var name = object.name;
   var uid = object.uid;
   const LoggedInuser = { name: name, uid: uid };

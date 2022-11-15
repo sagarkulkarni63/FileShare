@@ -4,10 +4,11 @@ const upload = multer({ dest: "uploads" });
 const router = express.Router();
 const { v4: uuidv4 } = require("uuid");
 const uploadQuery = require("../../models/query/uploadQuery.js");
-const verifyAccessToken = require("../authorization/verifyAccessToken");
+//const verifyAccessToken = require("../authorization/verifyAccessToken");
 const uploadController = require("./upload.controller");
+const {controllerHandler}=require('../../utils/controllerHandler');
 
-router.get("/", uploadController.uploadGetController);
+router.get("/", controllerHandler(uploadController.uploadGetController));
 
 router.post("/",upload.single("file"), uploadController.uploadPostController);
 

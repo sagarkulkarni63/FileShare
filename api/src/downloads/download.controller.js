@@ -17,11 +17,13 @@ async function  handleDownloadGet(req, res) {
 }
 
 async function handleDownloadPost(req,res){
+    try{
     const id=req.params.id;
     const reqPassword=req.body.password;
     const response=downloadService.downloadFile(id,reqPassword);
     if((await response).status==="failure"){
         res.status(400).send(response.msg);
+        throw new Error("Failure");
     }
     if( await response.status==="Render"){
         res.render((await response).data);
@@ -30,6 +32,11 @@ async function handleDownloadPost(req,res){
         console.log((await response).data)
         res.download( (await response).data)
     }
+    }catch(error){
+        console.log(error);
+        return res.status(400).send(err.message);
+    }
+    
 }
 
 

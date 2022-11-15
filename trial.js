@@ -66,17 +66,51 @@
 
 
 //Executor
-const client = require("../../../api/models/dbConnect");
+// const client = require("../../../api/models/dbConnect");
 
-function executor(query = "", params = [], resultCallback) {
-  return new Promise((res, rej) => {
-    client.query(query, params, (err, result) => {
-      if (err) rej(err);
-      if(resultCallback) res(resultCallback(result)); 
-      res(result);
-    });
-  });
-  console.log(res);
-}
+// function executor(query = "", params = [], resultCallback) {
+//   return new Promise((res, rej) => {
+//     client.query(query, params, (err, result) => {
+//       if (err) rej(err);
+//       if(resultCallback) res(resultCallback(result)); 
+//       res(result);
+//     });
+//   });
+//   console.log(res);
+// }
 
-module.exports=executor; 
+// module.exports=executor; 
+
+
+
+//Error Handling
+// export function sendRes(res: Response, options: ResponseData) {
+//     if (options.statusCode >= 300 && options.statusCode < 400) {
+//       res.writeHead(options.statusCode, {
+//         Location: options.redirectUrl
+//       });
+//       return res.end();
+//       // return res.redirect(options.statusCode, options.redirectUrl);
+//     } else if (options.stream) {
+//       res.write(JSON.stringify(options.data));
+//       res.end();
+//     } else if (options.statusCode) {
+//       options.requestId = httpContext.get('reqId');
+//       res.status(options.statusCode).json(options);
+//     } else {
+//       options.requestId = httpContext.get('reqId');
+//       res.json(options);
+//     }
+//   }
+  
+//   export function controllerHandler(ctrFunName) {
+//     return async (req: Request, res: Response, next: NextFunction) => {
+//       try {
+//         const returnStatus = await ctrFunName(req, res);
+//         return sendRes(res, returnStatus);
+//       } catch (error) {
+//         logger.error('Error occurred: ', error);
+//         sendRes(res, serverError(error.message));
+//       }
+//     };
+//   }
