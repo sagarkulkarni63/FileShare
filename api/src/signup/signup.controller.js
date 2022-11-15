@@ -6,6 +6,13 @@ module.exports=function signUpController(req,res){
     const user=req.body.name;
     const email=req.body.email;
     const password=req.body.password;
-    signUpUser(newId,user,email,password);
-    res.send("Success");
+    const response=signUpUser(newId,user,email,password);
+    response.then(result=> {if(result.status=="Exist"){
+        res.send("User Already Exist")
+        
+    }
+    else{
+        res.send("success")
+    }
+}).catch(console.log("error in response of signup"))
 }
