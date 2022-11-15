@@ -8,10 +8,11 @@ const verifyAccessToken=tokenService.authenticateToken;
 router.use(express.urlencoded({extended:true}))
 router.use(express.json());
 handleDownload=require('./download.controller');
+const { controllerHandler } = require('../../utils/controllerHandler');
 
-router.get("/:id",handleDownload.handleDownloadGet)
+router.get("/:id",controllerHandler(handleDownload.handleDownloadGet))
 
-router.post("/:id",verifyAccessToken,handleDownload.handleDownloadPost);
+router.post("/:id",verifyAccessToken,controllerHandler(handleDownload.handleDownloadPost));
 
 module.exports=router;
 

@@ -1,7 +1,7 @@
 const loginService = require("./login.service");
 
 module.exports = async function userLogin(req, res) {
-  throw new Error("In login error")
+  //throw new Error("In login error")
   const emailId = req.body.email;
   const password = req.body.password;
   if(!emailId || !password){

@@ -10,7 +10,7 @@ const {controllerHandler}=require('../../utils/controllerHandler');
 
 router.get("/", controllerHandler(uploadController.uploadGetController));
 
-router.post("/",upload.single("file"), uploadController.uploadPostController);
+router.post("/",upload.single("file"), controllerHandler(uploadController.uploadPostController));
 
 module.exports = router;
 
