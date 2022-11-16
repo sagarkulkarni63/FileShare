@@ -5,11 +5,11 @@ const generateAccessAndRefreshToken=tokenService.generateAccessAndRefreshToken;
 async function login(emailId, password) {
   const user = await getUser(emailId, password);
   //console.log(user);
-  if (!user.rows.length) {
+  if (!user) {
     return { status: "failure", msg: "INVALID USERNAME AND PASSWORD" };
   }
-  const object = user.rows[0];
-  //console.log(object);
+  const object = user.dataValues;
+  console.log(object);
   var name = object.name;
   var uid = object.uid;
   const LoggedInuser = { name: name, uid: uid };

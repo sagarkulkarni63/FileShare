@@ -1,5 +1,6 @@
 const signupQuery=require('../../models/query/signupQuery');
-const insertUserUsingSequelize=require('../../models/sequelize.query');
+const insertUsingSequelize=require('../../models/sequelize.query');
+const insertUserUsingSequelize=insertUsingSequelize.insertUserUsingSequelize
 
 module.exports=function signupModel(newId,user,email,password){
     try{

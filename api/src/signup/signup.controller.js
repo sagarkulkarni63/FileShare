@@ -1,5 +1,6 @@
 const {v4:uuidv4}=require('uuid');
-const signUpUser=require('./signup.service')
+const dbUsingSequelize=require('./signup.service')
+const signUpUser=dbUsingSequelize.users
 
 module.exports=function signUpController(req,res){
     const newId=uuidv4();

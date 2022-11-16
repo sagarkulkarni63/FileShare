@@ -3,10 +3,10 @@ const downloadModel=require('./download.models');
 async function downloadFile(id,reqPassword){
     const file=await fileInfo(id);
     console.log(file);
-    if(!file.rows.length){
+    if(!file){
         return {status:"failure", msg:"NO SUCH FILE EXIST"}
     }
-    const object=file.rows[0];
+    const object=file.dataValues;
     console.log(object);
     const password=object.password;
     const path=object.path;
