@@ -25,8 +25,8 @@ async function handleDownloadPost(req,res){
         res.status(400).send(response.msg);
         throw new Error("Failure");
     }
-    if( await response.status==="Render"){
-        res.render((await response).data);
+    if( (await response).status==="Render"){
+        res.render('password');
     }
     else if( (await response).status==="download"){
         console.log((await response).data)

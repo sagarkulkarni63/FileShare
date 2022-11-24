@@ -1,5 +1,5 @@
 const downloadQuery = require("../../models/query/getQuery.js");
-const queryUsingSequelize = require("../../models/sequelize.model");
+const queryUsingSequelize = require("../../models/file.sequelize");
 const searchQuery = queryUsingSequelize.files;
 
 module.exports = async function downloadModelsQuery(id) {

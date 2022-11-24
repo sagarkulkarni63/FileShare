@@ -1,0 +1,15 @@
+Data Models:
+i) Relational Data Model: Designs the data in the form of rows and columns within the table. Tables are also called relations. 
+ii) Entity-Relationship Model: Logical representations of data as objects and relatioship among them. These objects are known as entities, 
+and relationship is an association among these entities. A set of attributes describe the entities. A set of same type of entities is known as
+'Entity Set' and set of same type of relationship is known as 'relationship set'.
+iii) Object-based Data Model: Extension of the ER model with notions of functions, encapsulation, and objectidentity.
+iv) Semistructured Data Model: It is different from all the three data models. It allows data specification at places
+where the individual data items of the same type may have different attribute sets.
+
+Logical representation of database is Schema.
+The overall design of a database is called schema.
+Database schema is the skeleton structure of the database. It's logical view of the entire database.
+Schema contains schema objects like table, foreign key, primary key, columns, data types.
+
+

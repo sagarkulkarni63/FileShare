@@ -1,4 +1,5 @@
 const jwt=require('jsonwebtoken')
+const {ACCESS_TOKEN_SECRET}=require('../config/config');
 
 function authenticateToken(req,res,next){
     //console.log(req.headers);

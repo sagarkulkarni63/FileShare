@@ -7,7 +7,8 @@ module.exports = async function uploadModels(
   path,
   password,
   fileId,
-  link
+  link,
+  uid,
 ) {
   // const text='INSERT INTO files(fname,path,password,fileid,link) VALUES($1,$2,$3,$4,$5)';
   // const values=[originalName,path,password,fileId,link];
@@ -18,7 +19,8 @@ module.exports = async function uploadModels(
       path,
       password,
       fileId,
-      link
+      link,
+      uid,
     );
     console.log("File Uploaded");
     //return { status: "uploaded" };

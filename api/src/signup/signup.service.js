@@ -1,5 +1,5 @@
 const signupModels = require("./signup.models");
-const { users } = require("../../models/sequelize.model");
+const { users } = require("../../models/user.sequelize");
 
 module.exports = async function signUpUser(newId, user, email, password) {
   const emailExists = await users.findOne({ where: { email: email } });

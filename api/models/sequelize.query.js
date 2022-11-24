@@ -1,4 +1,7 @@
-const {users,files}=require('./sequelize.model');
+const fileObj=require('./file.sequelize');
+const files=fileObj.files;
+const userObj=require('./user.sequelize');
+const users=userObj.users;
 
 
 async function insertUserUsingSequelize(uid,name,email,password){
@@ -7,8 +10,8 @@ async function insertUserUsingSequelize(uid,name,email,password){
     return user;
 }
 
-async function insertFileUsingSequelize(fname,path,password,fileid,link){
-    const file=await files.create({fname,path,password,fileid,link});
+async function insertFileUsingSequelize(fname,path,password,fileid,link,useruid){
+    const file=await files.create({fname,path,password,fileid,link,useruid});
     return file;
 }
 

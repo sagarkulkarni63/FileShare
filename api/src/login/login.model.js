@@ -1,6 +1,6 @@
 const getQuery = require("../../models/query/getQuery");
-const queryUsingSequelize = require("../../models/sequelize.model");
-const searchQuery=queryUsingSequelize.users;
+const queryUsingSequelize = require("../../models/user.sequelize");
+const searchQuery=queryUsingSequelize.users
 
 module.exports = async function loginQuery(emailId, password) {
   // const text='SELECT uid,name FROM users WHERE email=$1 AND password=$2';

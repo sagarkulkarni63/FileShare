@@ -7,8 +7,9 @@ const uploadQuery = require("../../models/query/uploadQuery.js");
 const verifyAccessToken = require("../../middleware/authenticateToken");
 const uploadController = require("./upload.controller");
 const {controllerHandler}=require('../../utils/controllerHandler');
+const authenticateToken = require("../../middleware/authenticateToken");
 
-router.get("/",controllerHandler(uploadController.uploadGetController));
+router.get("/",authenticateToken,controllerHandler(uploadController.uploadGetController));
 
 router.post("/",upload.single("file"), controllerHandler(uploadController.uploadPostController));
 

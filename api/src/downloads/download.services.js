@@ -13,7 +13,7 @@ async function downloadFile(id,reqPassword){
     const fileName=object.fname;
     if(password!=null){
         console.log("password is not null");
-        if(reqPassword==null){
+        if(reqPassword===null){
             console.log(reqPassword);
             //res.render("password");
             return{status:"Render",data:"password"};
