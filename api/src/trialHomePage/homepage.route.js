@@ -2,7 +2,7 @@ const express=require('express');
 const { controllerHandler } = require('../../utils/controllerHandler');
 const router=express.Router();
 router.use(express.json());
-const homepageController=require('./honepage.controller');
+const homepageController=require('./homepage.controller');
 const authenticateToken=require('../../middleware/authenticateToken')
 
 
